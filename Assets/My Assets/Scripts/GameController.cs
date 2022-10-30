@@ -30,8 +30,6 @@ public class GameController : MonoBehaviour
 
     //for hiscores table
     [SerializeField] HighscoreHandler highscoreHandler;
-    //[SerializeField] string filename;
-    //List<InputEntry> entries = new List<InputEntry>();
 
     //game ui panel
     public GameObject mainGameUIPanel;
