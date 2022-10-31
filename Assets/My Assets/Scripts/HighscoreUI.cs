@@ -60,8 +60,13 @@ public class HighscoreUI : MonoBehaviour
         }
     }
 
-    public void ReturnToMenu()
-    {
-        SceneManager.LoadScene("Menu");
-    }
+    //public void ClearHighscores()
+    //{
+    //    MainManager.Instance.BestPlayerName = "";
+    //    MainManager.Instance.BestPlayerScore = 0;
+    //    MainManager.Instance.LastPlayerName = "";
+    //    MainManager.Instance.LastPlayerScore = 0;
+
+    //    uiElements.Clear();
+    //}
 }

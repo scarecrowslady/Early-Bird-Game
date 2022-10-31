@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         gameManagingScript = gameManager.GetComponent<GameController>();
 
         //controlling numbers
-        healthHitPoint = -10;
+        healthHitPoint = -5;
         hiScoreAdd = 5;
     }
 

@@ -29,6 +29,8 @@ public class HighscoreHandler : MonoBehaviour
         {
             onHighscoreListChanged.Invoke(highscoreList);
         }
+
+        Debug.Log("before clearing: " + highscoreList.Count);
     }
 
     private void SaveHighscore()
@@ -62,7 +64,7 @@ public class HighscoreHandler : MonoBehaviour
         }
     }
 
-    public void ClearHighscores()
+    public void ClearHighscores(HighscoreElement elements)
     {
         MainManager.Instance.BestPlayerName = "";
         MainManager.Instance.BestPlayerScore = 0;
@@ -70,5 +72,9 @@ public class HighscoreHandler : MonoBehaviour
         MainManager.Instance.LastPlayerScore = 0;
 
         highscoreList.Clear();
+
+        SaveHighscore();
+
+        Debug.Log("after clearing: " + highscoreList.Count);
     }
 }

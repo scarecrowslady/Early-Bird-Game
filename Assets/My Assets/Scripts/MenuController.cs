@@ -134,7 +134,7 @@ public class MenuController : MonoBehaviour
     {
         if(isGameJustEnded == true)
         {
-            highscoreHandler.AddHighscoreIfPossible(new HighscoreElement(MainManager.Instance.LastPlayerName, MainManager.Instance.LastPlayerScore));
+            highscoreHandler.AddHighscoreIfPossible(new HighscoreElement(MainManager.Instance.PlayerName, MainManager.Instance.PlayerHiScore));
 
             isGameJustEnded = false;
         }
