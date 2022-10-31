@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 98406999}
   - component: {fileID: 98407001}
   - component: {fileID: 98407002}
+  - component: {fileID: 98407003}
   m_Layer: 0
   m_Name: MainMenu Controller
   m_TagString: Untagged
@@ -263,7 +264,9 @@ MonoBehaviour:
   bestPlayerScore: {fileID: 1899786746}
   bestPlayerNameVar: 
   bestPlayerScoreVar: 0
+  highscoreHandler: {fileID: 98407003}
   isGameSaved: 0
+  isGameJustEnded: 0
 --- !u!114 &98407002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,8 +279,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4567169ee51bc634d9ca33e3cdd6dcdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 1318175142}
   highscoreUIElementPrefab: {fileID: 911420205677712984, guid: 01e826d4176ce0746913082d0a589aa1, type: 3}
   elementWrapper: {fileID: 1848367592}
+--- !u!114 &98407003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98406998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b7334db0e0dcd4abd51c9b1456a3b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCount: 10
+  filename: HiScoresData.json
 --- !u!1 &141089038
 GameObject:
   m_ObjectHideFlags: 0
@@ -6214,6 +6232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsGameSaved: 0
   IsGameEnded: 0
+  IsGameJustEnded: 0
   isHighScoreTriggered: 0
   DifficultyLevel: 
   PlayerName: 
@@ -11328,10 +11347,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1318175142}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 98407002}
+        m_TargetAssemblyTypeName: HighscoreUI, Assembly-CSharp
+        m_MethodName: ClosePanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12944,10 +12963,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1318175142}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 98407002}
+        m_TargetAssemblyTypeName: HighscoreUI, Assembly-CSharp
+        m_MethodName: ShowPanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

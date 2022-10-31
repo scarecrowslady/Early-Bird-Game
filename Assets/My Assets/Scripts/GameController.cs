@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
     public float bestPlayerScore;
 
     //for hiscores table
-    [SerializeField] HighscoreHandler highscoreHandler;
+    //[SerializeField] HighscoreHandler highscoreHandler;
 
     //game ui panel
     public GameObject mainGameUIPanel;
@@ -37,6 +37,9 @@ public class GameController : MonoBehaviour
 
     //game ending screen
     public TMP_Text gameReturnHiScore;
+
+    //game state
+    public bool isGameJustEnded;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +61,9 @@ public class GameController : MonoBehaviour
         //controlling game states
         mainGameUIPanel.SetActive(true);
         pauseGamePanel.SetActive(false);
+
+        isGameJustEnded = false;
+        MainManager.Instance.IsGameJustEnded = isGameJustEnded;
 
         Time.timeScale = 1;
 
@@ -124,7 +130,10 @@ public class GameController : MonoBehaviour
     {
         Time.timeScale = 0;
 
-        highscoreHandler.AddHighscoreIfPossible(new HighscoreElement(MainManager.Instance.PlayerName, MainManager.Instance.PlayerHiScore));
+        isGameJustEnded = true;
+        MainManager.Instance.IsGameJustEnded = isGameJustEnded;
+
+        //highscoreHandler.AddHighscoreIfPossible(new HighscoreElement(MainManager.Instance.PlayerName, MainManager.Instance.PlayerHiScore));
         ManageBestLastScores();        
 
         SceneManager.LoadScene("Menu");

@@ -12,6 +12,7 @@ public class MainManager : MonoBehaviour
     #region "data enclosed"
     public bool IsGameSaved;
     public bool IsGameEnded;
+    public bool IsGameJustEnded;
     public bool isHighScoreTriggered;
     public string DifficultyLevel;
 
@@ -56,6 +57,7 @@ public class MainManager : MonoBehaviour
     {
         public bool IsGameSaved;
         public bool IsGameEnded;
+        public bool IsGameJustEnded;
         public bool isHighScoreTriggered;
         public string DifficultyLevel;
 
@@ -85,6 +87,7 @@ public class MainManager : MonoBehaviour
 
         data.IsGameSaved = IsGameSaved;
         data.IsGameEnded = IsGameEnded;
+        data.IsGameJustEnded = IsGameJustEnded;
         data.isHighScoreTriggered = isHighScoreTriggered;
         data.DifficultyLevel = DifficultyLevel;
 
@@ -122,6 +125,7 @@ public class MainManager : MonoBehaviour
 
             IsGameSaved = data.IsGameSaved;
             IsGameEnded = data.IsGameEnded;
+            IsGameJustEnded = data.IsGameJustEnded;
             isHighScoreTriggered = data.isHighScoreTriggered;
             DifficultyLevel = data.DifficultyLevel;
 

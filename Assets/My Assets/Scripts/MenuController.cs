@@ -42,8 +42,11 @@ public class MenuController : MonoBehaviour
     public string bestPlayerNameVar;
     public float bestPlayerScoreVar;
 
+    [SerializeField] HighscoreHandler highscoreHandler;
+
     //managing game states
     public bool isGameSaved;
+    public bool isGameJustEnded;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +63,7 @@ public class MenuController : MonoBehaviour
 
         //noting game state
         isGameSaved = MainManager.Instance.IsGameSaved;
+        isGameJustEnded = MainManager.Instance.IsGameJustEnded;
     }
 
     #region choosing stuff    
@@ -118,6 +122,15 @@ public class MenuController : MonoBehaviour
     {
         SceneManager.LoadScene("Hiscores");
     }
+
+    public void TriggerHiScoreTabulation()
+    {
+        if(isGameJustEnded == true)
+        {
+            highscoreHandler.AddHighscoreIfPossible(new HighscoreElement(MainManager.Instance.LastPlayerName, MainManager.Instance.LastPlayerScore));
+        }
+    }
+
     #endregion
 
     #region manage game states
@@ -134,6 +147,8 @@ public class MenuController : MonoBehaviour
             MainManager.Instance.IsGameSaved = false;
 
             SceneManager.LoadScene("Game");
+
+            isGameJustEnded = false;
         }
         else
         {
@@ -153,6 +168,8 @@ public class MenuController : MonoBehaviour
         else
         {          
             LoadGame();
+
+            isGameJustEnded = false;
         }
     }
 
