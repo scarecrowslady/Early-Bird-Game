@@ -28,8 +28,6 @@ public class MainManager : MonoBehaviour
     public float LastPlayerScore;
     public string BestPlayerName;
     public float BestPlayerScore;
-    public string RecentPlayerName;
-    public float RecentPlayerScore;
 
     public float masterVol;
     public float bkgrdMusVol;
@@ -73,8 +71,6 @@ public class MainManager : MonoBehaviour
         public float LastPlayerScore;
         public string BestPlayerName;
         public float BestPlayerScore;
-        public string RecentPlayerName;
-        public float RecentPlayerScore;
 
         public float masterVol;
         public float bkgrdMusVol;
@@ -103,8 +99,6 @@ public class MainManager : MonoBehaviour
         data.LastPlayerScore = LastPlayerScore;
         data.BestPlayerName = BestPlayerName;
         data.BestPlayerScore = BestPlayerScore;
-        data.RecentPlayerName = RecentPlayerName;
-        data.RecentPlayerScore = RecentPlayerScore;
 
         data.masterVol = masterVol;
         data.bkgrdMusVol = bkgrdMusVol;
@@ -141,8 +135,6 @@ public class MainManager : MonoBehaviour
             LastPlayerScore = data.LastPlayerScore;
             BestPlayerName = data.BestPlayerName;
             BestPlayerScore = data.BestPlayerScore;
-            RecentPlayerName = data.RecentPlayerName;
-            RecentPlayerScore = data.RecentPlayerScore;
 
             masterVol = data.masterVol;
             bkgrdMusVol = data.bkgrdMusVol;

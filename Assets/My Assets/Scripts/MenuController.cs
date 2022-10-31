@@ -27,6 +27,8 @@ public class MenuController : MonoBehaviour
     public TMP_InputField inputPlayerName;
     public string inputPlayerNameText;
 
+    public GameObject playerInputTextPanel;
+
     //starting stats
     public float playerHealth;
     public float playerMaxHealth;
@@ -85,6 +87,11 @@ public class MenuController : MonoBehaviour
         isPlayerNameSelected = true;
     }
 
+    public void LimitCharacter()
+    {
+        inputPlayerName.characterLimit = 10;
+    }
+
     public void GetInputOnClickHandler()
     {
         Debug.Log("Log Input: " + inputPlayerName.text);
@@ -128,6 +135,8 @@ public class MenuController : MonoBehaviour
         if(isGameJustEnded == true)
         {
             highscoreHandler.AddHighscoreIfPossible(new HighscoreElement(MainManager.Instance.LastPlayerName, MainManager.Instance.LastPlayerScore));
+
+            isGameJustEnded = false;
         }
     }
 

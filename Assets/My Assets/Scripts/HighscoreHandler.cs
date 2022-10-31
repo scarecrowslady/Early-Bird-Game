@@ -61,4 +61,14 @@ public class HighscoreHandler : MonoBehaviour
             }
         }
     }
+
+    public void ClearHighscores()
+    {
+        MainManager.Instance.BestPlayerName = "";
+        MainManager.Instance.BestPlayerScore = 0;
+        MainManager.Instance.LastPlayerName = "";
+        MainManager.Instance.LastPlayerScore = 0;
+
+        highscoreList.Clear();
+    }
 }

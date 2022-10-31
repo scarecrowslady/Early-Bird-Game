@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class HighscoreUI : MonoBehaviour
 {
@@ -34,11 +35,11 @@ public class HighscoreUI : MonoBehaviour
 
     private void UpdateUI(List<HighscoreElement> list)
     {
+        Debug.Log(list.Count);
+
         for (int i = 0; i < list.Count; i++)
         {
             HighscoreElement el = list[i];
-
-            Debug.Log(i + "");
 
             if (el != null && el.points > 0)
             {
@@ -52,11 +53,9 @@ public class HighscoreUI : MonoBehaviour
                 }
 
                 // write or overwrite name & points
-                var texts = uiElements[i].GetComponentsInChildren<Text>();
-                texts[1].text = el.playerName;
-                texts[2].text = el.points.ToString();
-
-                Debug.Log(uiElements.Count);
+                var texts = uiElements[i].GetComponentsInChildren<TextMeshProUGUI>();
+                texts[0].text = el.playerName;
+                texts[1].text = el.points.ToString();
             }
         }
     }
